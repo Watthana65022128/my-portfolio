@@ -59,10 +59,10 @@ export default function Navigation() {
         </svg>
       </button>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Overlay */}
       <div
         className={cn(
-          "fixed inset-0 top-16 bg-background/80 backdrop-blur-lg md:hidden transition-all duration-300 z-40",
+          "fixed inset-0 top-16 bg-black/50 md:hidden transition-all duration-300 z-40",
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -70,7 +70,7 @@ export default function Navigation() {
         onClick={() => setMobileMenuOpen(false)}
       >
         <nav
-          className="bg-card border border-border rounded-lg m-4 shadow-xl"
+          className="bg-card border border-border rounded-lg m-4 shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           <ul className="flex flex-col p-2">
