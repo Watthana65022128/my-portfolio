@@ -33,7 +33,7 @@ export default function AboutSection() {
             </div>
 
             {/* Info Cards */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               <div className="bg-background rounded-lg p-4 border border-border">
                 <p className="text-sm text-muted-foreground mb-1">Location</p>
                 <p className="font-semibold">{personalInfo.location}</p>
