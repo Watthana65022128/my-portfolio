@@ -3,7 +3,6 @@ import { PersonalInfo, SocialLink, NavItem } from "@/types";
 export const personalInfo: PersonalInfo = {
   name: "Watthana Kayowaen",
   title: "Full-Stack Developer",
-  tagline: "Building elegant solutions to complex problems",
   bio: [
     "Hello, I'm Jame, a dedicated Full-Stack Developer with a strong interest in modern web technologies. I’m passionate about building applications that are visually refined, high-performing, and genuinely user-centric.",
     "With solid experience in both frontend and backend development, I focus on writing clean, maintainable code and designing systems that are structured, scalable, and reliable.",
