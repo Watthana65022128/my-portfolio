@@ -13,7 +13,7 @@ export default function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Greeting */}
           <p className="text-lg md:text-xl text-muted-foreground mb-4 animate-fade-in">
-            Hi, I'm
+            Hi, I&apos;m
           </p>
 
           {/* Name */}

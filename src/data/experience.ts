@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
       "Built secure REST API with JWT authentication and MySQL database integration and Created admin dashboard for user management ",
     ],
     technologies: [
-      "Futter",
+      "Flutter",
       "Express.js",
       "Node.js",
       "MySQL",
