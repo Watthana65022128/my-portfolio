@@ -62,14 +62,18 @@ export default function Navigation() {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "fixed inset-0 top-16 bg-background/95 backdrop-blur-sm md:hidden transition-all duration-300",
+          "fixed inset-0 top-16 bg-background/80 backdrop-blur-lg md:hidden transition-all duration-300 z-40",
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         )}
+        onClick={() => setMobileMenuOpen(false)}
       >
-        <nav className="section-container py-8">
-          <ul className="space-y-4">
+        <nav
+          className="bg-card border border-border rounded-lg m-4 shadow-xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ul className="flex flex-col p-2">
             {navItems.map((item) => (
               <li key={item.href}>
                 <a
@@ -78,7 +82,7 @@ export default function Navigation() {
                     e.preventDefault();
                     handleClick(item.href);
                   }}
-                  className="block text-lg font-medium text-foreground hover:text-primary transition-colors py-2"
+                  className="block text-lg font-medium text-foreground hover:text-primary hover:bg-muted transition-all py-3 px-4 rounded-lg"
                 >
                   {item.label}
                 </a>
