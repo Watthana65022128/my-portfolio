@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     id: "1",
     company: "University of Phayao",
-    projectName: "Smart Farm Management App",
+    projectName: "Farm Management App",
     location: "Phayao, Thailand",
     startDate: "2024-10",
     endDate: "2025-03",
