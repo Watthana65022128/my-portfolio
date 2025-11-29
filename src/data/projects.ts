@@ -13,9 +13,8 @@ export const projects: Project[] = [
       "Android Studio",
     ],
     category: "mobile",
-    liveUrl: "https://example.com",
     githubUrl: "https://github.com/Watthana65022128/agricultural-expense-management-app",
-    featured: true,
+    featured: false,
     date: "2024-01",
   },
   {
@@ -23,12 +22,11 @@ export const projects: Project[] = [
     title: "Farm Expense Management API",
     description:
       "An agricultural expense management system with OCR receipt scanning and farm management features.",
-    image: "/images/projects/agricultural-api.jpg",
+    image: "/images/projects/agricultural-app.jpg",
     technologies: ["Node.js", "Express.JS","MySQL",],
     category: "backend",
-    liveUrl: "https://example.com",
     githubUrl: "https://github.com/Watthana65022128/agricultural-expense-management-api",
-    featured: true,
+    featured: false,
     date: "2023-11",
   },
   {
@@ -36,12 +34,12 @@ export const projects: Project[] = [
     title: "Face Tracking System",
     description:
       "Real-time Behavioral Monitoring for Online Examinations",
-    image: "/images/projects/Tracking.jpg",
+    image: "/images/projects/agricultural-app.jpg",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
     category: "fullstack",
-    liveUrl: "https://example.com",
+    liveUrl: "https://face-tracking-system.vercel.app/login",
     githubUrl: "https://github.com/Watthana65022128/face-tracking-system",
-    featured: true,
+    featured: false,
     date: "2023-09",
   },
 ];

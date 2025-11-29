@@ -26,7 +26,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "database",
-    title: "Database & Tools",
+    title: "Database",
     skills: [
       { name: "MongoDB", category: "database", },
       { name: "PostgreSQL", category: "database",},
@@ -36,7 +36,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "tools",
-    title: "Tools & Others",
+    title: "Tools & Technologies",
     skills: [
       { name: "Git", category: "tools", },
       { name: "Docker", category: "tools",},
@@ -45,7 +45,6 @@ export const skillGroups: SkillGroup[] = [
       { name: "GitLab", category: "tools",},
       { name: "OCR", category: "tools",},
       { name: "Deep Learning", category: "tools",},
-      { name: "Swagger", category: "tools",},
     ],
   },
 ];

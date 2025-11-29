@@ -12,11 +12,12 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Image */}
           <div className="order-2 lg:order-1">
-            <div className="relative aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/profile.jpg"
                 alt={personalInfo.name}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 384px"
                 className="object-cover"
                 priority
               />

@@ -9,23 +9,65 @@ interface ProjectCardProps {
   project: Project;
 }
 
+const getCategoryIcon = (category: string) => {
+  switch (category) {
+    case "mobile":
+      return (
+        <svg className="w-20 h-20" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      );
+    case "backend":
+      return (
+        <svg className="w-20 h-20" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+        </svg>
+      );
+    case "fullstack":
+      return (
+        <svg className="w-20 h-20" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+      );
+    case "web":
+    case "frontend":
+      return (
+        <svg className="w-20 h-20" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+      );
+    default:
+      return (
+        <svg className="w-20 h-20" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      );
+  }
+};
+
+const getCategoryGradient = (category: string) => {
+  switch (category) {
+    case "mobile":
+      return "from-blue-500/20 via-cyan-500/20 to-blue-600/20";
+    case "backend":
+      return "from-green-500/20 via-emerald-500/20 to-teal-600/20";
+    case "fullstack":
+      return "from-purple-500/20 via-pink-500/20 to-purple-600/20";
+    case "web":
+    case "frontend":
+      return "from-orange-500/20 via-amber-500/20 to-yellow-600/20";
+    default:
+      return "from-primary/20 via-primary/10 to-purple-600/20";
+  }
+};
+
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card hover className="flex flex-col h-full">
-      {/* Image */}
-      <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-t-lg -m-6 mb-4">
-        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-          <svg
-            className="w-16 h-16"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
+      {/* Icon Header */}
+      <div className={`relative aspect-video bg-gradient-to-br ${getCategoryGradient(project.category)} rounded-t-lg -m-6 mb-4 overflow-hidden`}>
+        <div className="absolute inset-0 flex items-center justify-center text-foreground/40">
+          {getCategoryIcon(project.category)}
         </div>
         {project.featured && (
           <Badge
@@ -35,6 +77,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             Featured
           </Badge>
         )}
+        <div className="absolute bottom-4 left-4">
+          <Badge variant="secondary" className="backdrop-blur-sm bg-background/80">
+            {project.category}
+          </Badge>
+        </div>
       </div>
 
       <CardContent className="flex-1">
@@ -67,7 +114,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             size="sm"
             onClick={() => window.open(project.liveUrl, "_blank")}
           >
-            Live Demo
+            Launch App
           </Button>
         )}
         {project.githubUrl && (

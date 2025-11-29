@@ -39,7 +39,6 @@ export const experiences: Experience[] = [
       "Tailwind CSS",
       "Supabase",
       "PostgreSQL",
-      "TensorFlow.js",
       "Face API.js",
       "MediaPipe",
     ],
