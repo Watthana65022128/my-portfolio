@@ -47,12 +47,12 @@ export interface SkillGroup {
 export interface Experience {
   id: string;
   company: string;
-  position: string;
+  projectName: string;
   location: string;
   startDate: string;
   endDate?: string;
   current: boolean;
-  description: string;
+  description?: string;
   responsibilities: string[];
   technologies: string[];
 }

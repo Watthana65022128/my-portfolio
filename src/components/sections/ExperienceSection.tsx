@@ -33,7 +33,7 @@ export default function ExperienceSection() {
                     {/* Header */}
                     <div className="mb-4">
                       <h3 className="text-xl font-semibold mb-1">
-                        {exp.position}
+                        {exp.projectName}
                       </h3>
                       <p className="text-primary font-medium mb-2">
                         {exp.company}
@@ -53,9 +53,11 @@ export default function ExperienceSection() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-muted-foreground mb-4">
-                      {exp.description}
-                    </p>
+                    {exp.description && (
+                      <p className="text-muted-foreground mb-4">
+                        {exp.description}
+                      </p>
+                    )}
 
                     {/* Responsibilities */}
                     <ul className="list-disc list-inside space-y-1 mb-4 text-sm text-muted-foreground">
