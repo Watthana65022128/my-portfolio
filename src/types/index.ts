@@ -61,6 +61,7 @@ export interface Experience {
 export interface PersonalInfo {
   name: string;
   title: string;
+  tagline?: string;
   bio: string[];
   email: string;
   location: string;

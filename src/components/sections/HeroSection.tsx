@@ -22,14 +22,9 @@ export default function HeroSection() {
           </h1>
 
           {/* Title */}
-          <h2 className="heading-secondary text-foreground mb-6 animate-slide-up">
+          <h2 className="heading-secondary text-foreground mb-12 animate-slide-up">
             {personalInfo.title}
           </h2>
-
-          {/* Tagline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
-            {personalInfo.tagline}
-          </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in">
