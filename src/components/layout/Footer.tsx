@@ -5,8 +5,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted/30 border-t border-border">
-      <div className="section-container py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="section-container py-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* About */}
           <div>
             <h3 className="text-lg font-semibold mb-3">{personalInfo.name}</h3>
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-border text-center">
+        <div className="mt-6 pt-6 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
