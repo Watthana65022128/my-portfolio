@@ -3,46 +3,90 @@
 @tailwind utilities;
 
 @layer base {
+  /* Modern Developer Dark Theme - Calm, Professional, Intelligent */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    /* Dark charcoal background */
+    --background: 220 13% 10%;
+    /* High-contrast off-white text */
+    --foreground: 210 20% 95%;
+    /* Card slightly elevated from background */
+    --card: 220 13% 13%;
+    --card-foreground: 210 20% 95%;
+    /* Neon cyan accent - the single accent color */
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 13% 10%;
+    /* Secondary - subtle charcoal variation */
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 210 20% 90%;
+    /* Muted for subtle backgrounds */
+    --muted: 220 13% 15%;
+    --muted-foreground: 215 15% 60%;
+    /* Accent uses the same cyan for consistency */
+    --accent: 185 100% 50%;
+    --accent-foreground: 220 13% 10%;
+    /* Subtle borders */
+    --border: 220 13% 20%;
+    --input: 220 13% 18%;
+    --ring: 185 100% 50%;
+    /* Neon glow color for special effects */
+    --neon-glow: 185 100% 50%;
   }
 
+  /* Dark mode uses same colors - it's a dark-first theme */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --background: 220 13% 10%;
+    --foreground: 210 20% 95%;
+    --card: 220 13% 13%;
+    --card-foreground: 210 20% 95%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 13% 10%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 210 20% 90%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 215 15% 60%;
+    --accent: 185 100% 50%;
+    --accent-foreground: 220 13% 10%;
+    --border: 220 13% 20%;
+    --input: 220 13% 18%;
+    --ring: 185 100% 50%;
+    --neon-glow: 185 100% 50%;
+  }
+
+  /* Light mode - keeping professional but inverted */
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 220 13% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 10%;
+    --primary: 185 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 220 13% 15%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 45%;
+    --accent: 185 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --border: 210 15% 88%;
+    --input: 210 15% 90%;
+    --ring: 185 100% 40%;
+    --neon-glow: 185 100% 40%;
   }
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Strong typography foundation */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Smooth focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 }
 
@@ -55,20 +99,42 @@
     @apply py-16 md:py-24;
   }
 
+  /* Strong typography hierarchy */
   .heading-primary {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
   }
 
   .heading-secondary {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
   }
 
   .heading-tertiary {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
   }
 
+  /* Neon cyan gradient - signature accent */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-500;
+  }
+
+  /* Subtle neon glow effect for special elements */
+  .neon-glow {
+    box-shadow: 0 0 20px hsl(var(--neon-glow) / 0.3),
+                0 0 40px hsl(var(--neon-glow) / 0.1);
+  }
+
+  .neon-glow-sm {
+    box-shadow: 0 0 10px hsl(var(--neon-glow) / 0.2);
+  }
+
+  /* Subtle border glow on hover */
+  .border-glow {
+    @apply transition-shadow duration-300;
+  }
+  
+  .border-glow:hover {
+    box-shadow: 0 0 15px hsl(var(--neon-glow) / 0.15),
+                inset 0 0 15px hsl(var(--neon-glow) / 0.03);
   }
 }
 
@@ -77,9 +143,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - matching the dark theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -87,10 +153,21 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary) / 0.5);
-  border-radius: 5px;
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Selection color */
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  @apply transition-all duration-200 ease-out;
 }

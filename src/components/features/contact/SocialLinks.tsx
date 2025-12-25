@@ -29,14 +29,14 @@ export default function SocialLinks({ links }: SocialLinksProps) {
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-3">
       {links.map((link) => (
         <a
           key={link.name}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+          className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 hover:scale-105"
           aria-label={link.name}
         >
           {getIconForSocial(link.name)}
