@@ -47,28 +47,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Location */}
-              <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/20 transition-all duration-200 group-hover:bg-primary/20 group-hover:border-primary/40">
-                  <svg
-                    className="w-5 h-5 text-primary"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold mb-1 text-foreground">Location</p>
-                  <p className="text-muted-foreground">{personalInfo.location}</p>
-                </div>
-              </div>
-
               {/* Social Links */}
               <div>
                 <p className="font-semibold mb-4 text-foreground">Connect With Me</p>

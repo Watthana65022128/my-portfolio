@@ -38,12 +38,8 @@ export default function AboutSection() {
               ))}
             </div>
 
-            {/* Info Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-              <div className="bg-card rounded-xl p-4 border border-border/50 transition-all duration-200 hover:border-primary/30">
-                <p className="text-xs text-primary font-medium uppercase tracking-wider mb-1">Location</p>
-                <p className="font-semibold text-foreground">{personalInfo.location}</p>
-              </div>
+            {/* Info Card */}
+            <div className="mt-8">
               <div className="bg-card rounded-xl p-4 border border-border/50 transition-all duration-200 hover:border-primary/30">
                 <p className="text-xs text-primary font-medium uppercase tracking-wider mb-1">Email</p>
                 <p className="font-semibold text-foreground text-sm">{personalInfo.email}</p>
