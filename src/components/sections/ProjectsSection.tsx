@@ -16,9 +16,13 @@ export default function ProjectsSection() {
   const featuredProjects = projects.filter((project) => project.featured);
 
   return (
-    <section id="projects" className="section-padding bg-muted/30">
-      <div className="section-container">
+    <section id="projects" className="section-padding relative">
+      {/* Subtle background accent */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/3 via-transparent to-transparent pointer-events-none" />
+      
+      <div className="section-container relative z-10">
         <h2 className="heading-secondary text-center mb-4">Featured Projects</h2>
+        <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Here are some of my recent projects that showcase my skills and experience
         </p>
@@ -30,7 +34,7 @@ export default function ProjectsSection() {
         />
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />

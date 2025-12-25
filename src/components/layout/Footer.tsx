@@ -4,25 +4,28 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted/30 border-t border-border">
-      <div className="section-container py-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm">
+      <div className="section-container py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">{personalInfo.name}</h3>
-            <p className="text-muted-foreground text-sm">
+            <h3 className="text-lg font-semibold mb-3 text-foreground">
+              {personalInfo.name}
+              <span className="text-primary">.</span>
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
               {personalInfo.tagline}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-3 text-foreground">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#about"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   About
                 </a>
@@ -30,7 +33,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#projects"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   Projects
                 </a>
@@ -38,7 +41,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#experience"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   Experience
                 </a>
@@ -48,18 +51,18 @@ export default function Footer() {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Connect</h3>
-            <div className="flex gap-4">
+            <h3 className="text-lg font-semibold mb-3 text-foreground">Connect</h3>
+            <div className="flex gap-3">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 px-3 py-1.5 bg-secondary/30 rounded-lg border border-border/50 hover:border-primary/30"
                   aria-label={link.name}
                 >
-                  <span className="text-sm">{link.name}</span>
+                  {link.name}
                 </a>
               ))}
             </div>
@@ -67,9 +70,11 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-6 pt-6 border-t border-border text-center">
+        <div className="mt-8 pt-6 border-t border-border/30 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} {personalInfo.name}. All rights reserved.
+            © {currentYear} {personalInfo.name}. Built with{" "}
+            <span className="text-primary">Next.js</span> &{" "}
+            <span className="text-primary">Tailwind CSS</span>
           </p>
         </div>
       </div>

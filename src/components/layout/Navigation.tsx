@@ -18,7 +18,7 @@ export default function Navigation() {
     <>
       {/* Desktop Navigation */}
       <nav className="hidden md:block">
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-8">
           {navItems.map((item) => (
             <li key={item.href}>
               <a
@@ -27,9 +27,10 @@ export default function Navigation() {
                   e.preventDefault();
                   handleClick(item.href);
                 }}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium text-sm tracking-wide group"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
           ))}
@@ -38,7 +39,7 @@ export default function Navigation() {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+        className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors duration-200"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label="Toggle menu"
       >
@@ -62,7 +63,7 @@ export default function Navigation() {
       {/* Mobile Navigation Overlay */}
       <div
         className={cn(
-          "fixed inset-0 top-16 bg-black/50 md:hidden transition-all duration-300 z-40",
+          "fixed inset-0 top-16 bg-background/80 backdrop-blur-sm md:hidden transition-all duration-300 ease-smooth z-40",
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -70,7 +71,7 @@ export default function Navigation() {
         onClick={() => setMobileMenuOpen(false)}
       >
         <nav
-          className="bg-card border border-border rounded-lg m-4 shadow-2xl"
+          className="bg-card/95 backdrop-blur-md border border-border/50 rounded-xl m-4 shadow-2xl shadow-primary/5"
           onClick={(e) => e.stopPropagation()}
         >
           <ul className="flex flex-col p-2">
@@ -82,7 +83,7 @@ export default function Navigation() {
                     e.preventDefault();
                     handleClick(item.href);
                   }}
-                  className="block text-lg font-medium text-foreground hover:text-primary hover:bg-muted transition-all py-3 px-4 rounded-lg"
+                  className="block text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 py-3 px-4 rounded-lg"
                 >
                   {item.label}
                 </a>
