@@ -12,7 +12,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as Theme | null;
@@ -20,21 +21,37 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       "(prefers-color-scheme: dark)"
     ).matches;
 
+    // Default to dark theme (dark-first design)
     const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
     setTheme(initialTheme);
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    applyTheme(initialTheme);
+    setMounted(true);
   }, []);
+
+  const applyTheme = (newTheme: Theme) => {
+    const root = document.documentElement;
+    if (newTheme === "dark") {
+      root.classList.add("dark");
+      root.classList.remove("light");
+    } else {
+      root.classList.add("light");
+      root.classList.remove("dark");
+    }
+  };
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    applyTheme(newTheme);
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      {/* Prevent flash of wrong theme while keeping context available */}
+      <div style={{ visibility: mounted ? "visible" : "hidden" }}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }

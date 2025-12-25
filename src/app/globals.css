@@ -4,6 +4,7 @@
 
 @layer base {
   /* Modern Developer Dark Theme - Calm, Professional, Intelligent */
+  /* Default: Dark theme (dark-first design) */
   :root {
     /* Dark charcoal background */
     --background: 220 13% 10%;
@@ -32,7 +33,7 @@
     --neon-glow: 185 100% 50%;
   }
 
-  /* Dark mode uses same colors - it's a dark-first theme */
+  /* Dark mode - explicit dark theme */
   .dark {
     --background: 220 13% 10%;
     --foreground: 210 20% 95%;
@@ -52,24 +53,33 @@
     --neon-glow: 185 100% 50%;
   }
 
-  /* Light mode - keeping professional but inverted */
+  /* Light mode - professional light theme with cyan accent */
   .light {
+    /* Clean off-white background */
     --background: 210 20% 98%;
-    --foreground: 220 13% 10%;
+    /* Dark charcoal text for readability */
+    --foreground: 220 15% 15%;
+    /* White cards with subtle elevation */
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 10%;
-    --primary: 185 100% 40%;
+    --card-foreground: 220 15% 15%;
+    /* Deeper cyan for visibility on light background */
+    --primary: 185 90% 42%;
     --primary-foreground: 0 0% 100%;
+    /* Light gray secondary */
     --secondary: 210 15% 93%;
-    --secondary-foreground: 220 13% 15%;
-    --muted: 210 15% 95%;
+    --secondary-foreground: 220 15% 20%;
+    /* Muted backgrounds */
+    --muted: 210 15% 96%;
     --muted-foreground: 215 15% 45%;
-    --accent: 185 100% 40%;
+    /* Cyan accent */
+    --accent: 185 90% 42%;
     --accent-foreground: 0 0% 100%;
-    --border: 210 15% 88%;
-    --input: 210 15% 90%;
-    --ring: 185 100% 40%;
-    --neon-glow: 185 100% 40%;
+    /* Visible borders */
+    --border: 210 15% 85%;
+    --input: 210 15% 92%;
+    --ring: 185 90% 42%;
+    /* Softer glow for light mode */
+    --neon-glow: 185 90% 42%;
   }
 }
 
