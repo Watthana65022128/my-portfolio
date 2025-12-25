@@ -4,9 +4,13 @@ import SocialLinks from "@/components/features/contact/SocialLinks";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="section-padding bg-muted/30">
-      <div className="section-container">
+    <section id="contact" className="section-padding relative">
+      {/* Subtle background accent */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none" />
+      
+      <div className="section-container relative z-10">
         <h2 className="heading-secondary text-center mb-4">Get In Touch</h2>
+        <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Have a project in mind or want to collaborate? Feel free to reach out!
         </p>
@@ -18,10 +22,10 @@ export default function ContactSection() {
 
             <div className="space-y-6">
               {/* Email */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/20 transition-all duration-200 group-hover:bg-primary/20 group-hover:border-primary/40">
                   <svg
-                    className="w-6 h-6 text-primary"
+                    className="w-5 h-5 text-primary"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -33,10 +37,10 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold mb-1">Email</p>
+                  <p className="font-semibold mb-1 text-foreground">Email</p>
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {personalInfo.email}
                   </a>
@@ -44,10 +48,10 @@ export default function ContactSection() {
               </div>
 
               {/* Location */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/20 transition-all duration-200 group-hover:bg-primary/20 group-hover:border-primary/40">
                   <svg
-                    className="w-6 h-6 text-primary"
+                    className="w-5 h-5 text-primary"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -60,14 +64,14 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold mb-1">Location</p>
+                  <p className="font-semibold mb-1 text-foreground">Location</p>
                   <p className="text-muted-foreground">{personalInfo.location}</p>
                 </div>
               </div>
 
               {/* Social Links */}
               <div>
-                <p className="font-semibold mb-4">Connect With Me</p>
+                <p className="font-semibold mb-4 text-foreground">Connect With Me</p>
                 <SocialLinks links={socialLinks} />
               </div>
             </div>

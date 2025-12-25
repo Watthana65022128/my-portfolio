@@ -4,19 +4,22 @@ import { cn } from "@/lib/utils";
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   hover?: boolean;
+  glow?: boolean;
 }
 
 export default function Card({
   children,
   className,
   hover = false,
+  glow = false,
   ...props
 }: CardProps) {
   return (
     <div
       className={cn(
-        "bg-card rounded-lg border border-border p-6 shadow-sm",
-        hover && "transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
+        "bg-card rounded-xl border border-border/50 p-6 backdrop-blur-sm",
+        hover && "transition-all duration-300 ease-smooth hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5",
+        glow && "border-glow",
         className
       )}
       {...props}
@@ -44,7 +47,7 @@ export function CardTitle({
   ...props
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3 className={cn("text-xl font-semibold", className)} {...props}>
+    <h3 className={cn("text-xl font-semibold tracking-tight", className)} {...props}>
       {children}
     </h3>
   );
@@ -56,7 +59,7 @@ export function CardDescription({
   ...props
 }: HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={cn("text-muted-foreground text-sm", className)} {...props}>
+    <p className={cn("text-muted-foreground text-sm leading-relaxed", className)} {...props}>
       {children}
     </p>
   );

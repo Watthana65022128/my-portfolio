@@ -21,9 +21,9 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-smooth",
         scrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-md"
+          ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-lg shadow-background/20"
           : "bg-transparent"
       )}
     >
@@ -32,9 +32,10 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#home"
-            className="text-xl md:text-2xl font-bold text-gradient hover:opacity-80 transition-opacity"
+            className="text-xl md:text-2xl font-bold text-gradient hover:opacity-80 transition-opacity duration-200"
           >
             {personalInfo.name.split(" ")[0]}
+            <span className="text-primary">.</span>
           </a>
 
           {/* Navigation and Theme Toggle */}

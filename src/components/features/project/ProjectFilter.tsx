@@ -25,15 +25,15 @@ export default function ProjectFilter({
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-3">
+    <div className="flex flex-wrap justify-center gap-2">
       {categories.map((category) => (
         <button
           key={category}
           onClick={() => onCategoryChange(category)}
-          className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
             selectedCategory === category
-              ? "bg-primary text-primary-foreground shadow-md"
-              : "bg-background border border-border text-foreground hover:bg-accent"
+              ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+              : "bg-secondary/50 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-primary/5"
           }`}
         >
           {getCategoryLabel(category)}
