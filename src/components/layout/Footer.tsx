@@ -72,9 +72,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-border/30 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} {personalInfo.name}. Built with{" "}
-            <span className="text-primary">Next.js</span> &{" "}
-            <span className="text-primary">Tailwind CSS</span>
+            © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
         </div>
       </div>
