@@ -11,7 +11,11 @@ export default function ProjectsSection() {
 
   const filteredProjects = selectedCategory === "all"
     ? projects
-    : projects.filter((project) => project.category === selectedCategory);
+    : projects.filter((project) => 
+        Array.isArray(project.category) 
+          ? project.category.includes(selectedCategory)
+          : project.category === selectedCategory
+      );
 
   const featuredProjects = projects.filter((project) => project.featured);
 

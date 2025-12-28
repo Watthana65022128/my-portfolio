@@ -51,7 +51,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {/* Icon Header - Minimalist with cyan accent */}
       <div className="relative aspect-video bg-gradient-to-br from-primary/5 via-primary/10 to-transparent rounded-xl -m-6 mb-4 overflow-hidden border-b border-border/30">
         <div className="absolute inset-0 flex items-center justify-center text-primary/30 transition-all duration-300 group-hover:text-primary/50 group-hover:scale-105">
-          {getCategoryIcon(project.category)}
+          {getCategoryIcon(project.category as string)}
         </div>
         {project.featured && (
           <Badge

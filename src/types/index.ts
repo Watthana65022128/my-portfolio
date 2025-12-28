@@ -6,7 +6,7 @@ export interface Project {
   longDescription?: string;
   image: string;
   technologies: string[];
-  category: ProjectCategory;
+  category: ProjectCategory | ProjectCategory[];
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
