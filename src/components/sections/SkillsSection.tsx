@@ -6,10 +6,7 @@ export default function SkillsSection() {
     <section id="skills" className="section-padding">
       <div className="section-container">
         <h2 className="heading-secondary text-center mb-4">Skills & Technologies</h2>
-        <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of the technologies and tools I work with
-        </p>
+        <div className="w-16 h-1 bg-primary mx-auto mb-12 rounded-full" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {skillGroups.map((group) => (

@@ -63,7 +63,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
         <div className="absolute bottom-4 left-4">
           <Badge variant="outline" className="backdrop-blur-sm bg-background/50 capitalize">
-            {project.category}
+            {Array.isArray(project.category) ? project.category[0] : project.category}
           </Badge>
         </div>
       </div>
