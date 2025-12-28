@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navigation from "./Navigation";
 import ThemeToggle from "../ui/ThemeToggle";
 import { personalInfo } from "@/data/personal";
@@ -8,10 +8,29 @@ import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      setScrolled(currentScrollY > 50);
+      
+      // Hide navbar when scrolling down past 50px, show when scrolling up
+      if (currentScrollY > 50) {
+        if (currentScrollY > lastScrollY.current) {
+          // Scrolling down
+          setHidden(true);
+        } else {
+          // Scrolling up
+          setHidden(false);
+        }
+      } else {
+        setHidden(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -24,7 +43,8 @@ export default function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-smooth",
         scrolled
           ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-lg shadow-background/20"
-          : "bg-transparent"
+          : "bg-transparent",
+        hidden ? "-translate-y-full" : "translate-y-0"
       )}
     >
       <div className="section-container">
