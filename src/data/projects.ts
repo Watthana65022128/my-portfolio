@@ -42,4 +42,16 @@ export const projects: Project[] = [
     featured: false,
     date: "2023-09",
   },
+  {
+    id: "4",
+    title: "Thai Handwritten OCR",
+    description:
+      "Optical Character Recognition (OCR) for Thai Handwritten Text Using Deep Learning",
+    image: "/images/projects/agricultural-app.jpg",
+    technologies: ["Python", "PyTorch", "Vision Transformer"],
+    category: "machine learning",
+    githubUrl: "https://github.com/Watthana65022128/model-vit-vision-transformer",
+    featured: false,
+    date: "2023-09",
+  },
 ];

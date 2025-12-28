@@ -19,7 +19,7 @@ export type ProjectCategory =
   | "fullstack"
   | "backend"
   | "frontend"
-  | "other";
+  | "machine learning";
 
 // Skill Types
 export interface Skill {
