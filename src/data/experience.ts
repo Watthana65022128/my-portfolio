@@ -43,4 +43,25 @@ export const experiences: Experience[] = [
       "MediaPipe",
     ],
   },
+  {
+    id: "3",
+    company: "Dudee Indeed Co., Ltd.",
+    projectName: "Inventory-API",
+    location: "Chiang Mai, Thailand",
+    startDate: "2025-11",
+    endDate: "2026-03",
+    current: false,
+    responsibilities: [
+      "Developed a RESTful API for inventory management using NestJS and PostgreSQL",
+      "Implemented JWT authentication and role-based access control for secure user management",
+      "Created comprehensive API documentation with Swagger for easy integration and usage",
+    ],
+    technologies: [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Swagger",
+      "Docker"
+    ],
+  },
 ];

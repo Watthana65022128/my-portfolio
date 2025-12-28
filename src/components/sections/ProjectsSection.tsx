@@ -22,10 +22,7 @@ export default function ProjectsSection() {
       
       <div className="section-container relative z-10">
         <h2 className="heading-secondary text-center mb-4">Featured Projects</h2>
-        <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects that showcase my skills and experience
-        </p>
+        <div className="w-16 h-1 bg-primary mx-auto mb-12 rounded-full" />
 
         {/* Filter */}
         <ProjectFilter

@@ -7,10 +7,7 @@ export default function ExperienceSection() {
     <section id="experience" className="section-padding">
       <div className="section-container">
         <h2 className="heading-secondary text-center mb-4">Work Experience</h2>
-        <div className="w-16 h-1 bg-primary mx-auto mb-4 rounded-full" />
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          My professional journey and career highlights
-        </p>
+        <div className="w-16 h-1 bg-primary mx-auto mb-12 rounded-full" />
 
         <div className="max-w-4xl mx-auto">
           {/* Timeline */}
