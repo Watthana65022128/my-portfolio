@@ -54,4 +54,16 @@ export const projects: Project[] = [
     featured: false,
     date: "2023-09",
   },
+  {
+    id: "5",
+    title: "Inventory Management API",
+    description:
+      "A RESTful API for inventory management with JWT authentication and role-based access control",
+    image: "/images/projects/agricultural-app.jpg",
+    technologies: ["Nest", "PostgreSQL", "Swagger", "Docker"],
+    category: "backend",
+    githubUrl: "https://github.com/Watthana65022128/inventory-track-api",
+    featured: false,
+    date: "2023-09",
+  },
 ];
