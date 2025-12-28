@@ -50,12 +50,13 @@ export const skillLevelColors = {
 };
 
 // Project category labels
-export const projectCategoryLabels = {
+export const projectCategoryLabels: Record<string, string> = {
   web: "Web App",
   mobile: "Mobile App",
   fullstack: "Full-Stack",
   backend: "Backend",
   frontend: "Frontend",
+  "machine learning": "ML",
   other: "Other",
 };
 

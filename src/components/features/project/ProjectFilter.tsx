@@ -17,6 +17,7 @@ export default function ProjectFilter({
     "backend",
     "web",
     "mobile",
+    "machine learning",
   ];
 
   const getCategoryLabel = (category: ProjectCategory | "all"): string => {
