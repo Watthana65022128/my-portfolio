@@ -46,15 +46,14 @@ export const experiences: Experience[] = [
   {
     id: "3",
     company: "Dudee Indeed Co., Ltd.",
-    projectName: "Inventory-API",
+    projectName: "Inventory & HIS System",
     location: "Chiang Mai, Thailand",
     startDate: "2025-11",
     endDate: "2026-03",
     current: false,
     responsibilities: [
-      "Developed a RESTful API for inventory management using NestJS and PostgreSQL",
-      "Implemented JWT authentication and role-based access control for secure user management",
-      "Created comprehensive API documentation with Swagger for easy integration and usage",
+      "Built a RESTful Inventory Tracking API with NestJS (Modular Monolith), covering end-to-end procurement flow — Purchase Requisitions → Purchase Orders → Goods Receipts → Stock Management — backed by PostgreSQL/TypeORM and auto-documented with Swagger.",
+      "Developed and executed an ETL pipeline to migrate critical hospital master data from legacy JSON and external database sources to PostgreSQL, implementing advanced SQL logic (UPSERT) and Python scripts to ensure data integrity and resolve duplicate constraints.",
     ],
     technologies: [
       "NestJS",
