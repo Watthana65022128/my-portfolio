@@ -53,7 +53,8 @@ export const experiences: Experience[] = [
     current: false,
     responsibilities: [
       "Built a RESTful Inventory API with NestJS (Modular Monolith), covering procurement flow (PR → PO → GR → Stock) using PostgreSQL, TypeORM, and Swagger",
-      "Developed and executed an ETL pipeline to migrate critical hospital data from legacy JSON and external database sources to PostgreSQL, implementing advanced SQL logic and Python scripts to ensure data integrity and resolve duplicate constraints",
+      "Built and executed an ETL pipeline migrating legacy JSON and external DB data to PostgreSQL, using advanced SQL and Python to ensure data integrity and resolve duplicates",
+      "Developed RESTful APIs for HIS master data management, ensuring data consistency and system integration",
     ],
     technologies: [
       "NestJS",
