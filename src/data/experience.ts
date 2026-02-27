@@ -52,8 +52,8 @@ export const experiences: Experience[] = [
     endDate: "2026-03",
     current: false,
     responsibilities: [
-      "Built a RESTful Inventory Tracking API with NestJS (Modular Monolith), covering end-to-end procurement flow — Purchase Requisitions → Purchase Orders → Goods Receipts → Stock Management — backed by PostgreSQL/TypeORM and auto-documented with Swagger.",
-      "Developed and executed an ETL pipeline to migrate critical hospital master data from legacy JSON and external database sources to PostgreSQL, implementing advanced SQL logic (UPSERT) and Python scripts to ensure data integrity and resolve duplicate constraints.",
+      "Built a RESTful Inventory API with NestJS (Modular Monolith), covering procurement flow (PR → PO → GR → Stock) using PostgreSQL, TypeORM, and Swagger",
+      "Developed and executed an ETL pipeline to migrate critical hospital data from legacy JSON and external database sources to PostgreSQL, implementing advanced SQL logic and Python scripts to ensure data integrity and resolve duplicate constraints",
     ],
     technologies: [
       "NestJS",
