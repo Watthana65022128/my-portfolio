@@ -7,7 +7,7 @@ export const personalInfo: PersonalInfo = {
     "Hello, I'm Jame, a dedicated Full-Stack Developer with a strong interest in modern web technologies. I’m passionate about building applications that are visually refined, high-performing, and genuinely user-centric.",
     "With solid experience in both frontend and backend development, I focus on writing clean, maintainable code and designing systems that are structured, scalable, and reliable.",
   ],
-  email: "watthana.wk@gmail.com",
+  email: "watthana04.wk@gmail.com",
   location: "ChaingMai, Thailand",
   avatar: "/images/profile.jpg",
 };
